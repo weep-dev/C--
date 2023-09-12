@@ -2,32 +2,40 @@
 #include <stdio.h>  //biblioteca do gets
 using namespace std;
 
-void somar(float *var, float valor){
-    *var += valor;
+float somar(float *var, float *var2){
+    return *var + *var2;
 }
 
-void iniVetor(float *v){
-    for(int i=0; i<5; i++){
-        v[i] = i+1;
+void iniVetor(float *v, int tam){
+    for(int i=0; i<tam; i++){
+        cout << "Digite o valor da posicao: " << i << " ";
+        cin >> v[i];
     }
 }
 
 int main(){
 
-    float num = 0;
-    float vet[5];
+    float num1;
+    float num2;
 
-    iniVetor(vet);
+    int tam;
+    cout << "Digite o tamanho do vetor: ";
+    cin >> tam;
 
-    somar(&num, 15);
+    float *vet = new float[tam];
 
-    cout << num <<endl;
+    iniVetor(vet, tam);
 
-    for(int i=0; i<5; i++){
+    for(int i=0; i<tam; i++){
         cout << vet[i] << endl;
     }
 
-
+    cout << "Somar valores" << endl;
+    cout << "Valor 1: ";
+    cin >> num1;
+    cout << "Valor 2: ";
+    cin >> num2;
+    cout << num1 << " + " << num2 << " = " << somar(&num1, &num2);
 
     return 0;
 }
