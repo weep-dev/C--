@@ -56,7 +56,7 @@ void insert(nolista *&l, string info, int pos){
         p -> dado = info;
         p -> prox = l;
         l = p;
-    }else if(pos >= 0 && pos < len(l)){
+    }else if(pos >= 0 && pos <= len(l)){
         nolista *aux, *p;
         aux = l;
         for(int i=0; i < pos-1; i++){
