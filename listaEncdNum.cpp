@@ -38,17 +38,18 @@ void print(nolista *l){
 int max(nolista *l){
     int max;
     if(l != NULL){
-        max = l->num;
+        max = l -> num;
         nolista *aux = l;
         while(aux != NULL){
-            if(aux->num > max){
-                max=aux->num;
+            if(aux -> num > max){
+                max = aux -> num;
             }
             aux = aux -> prox;
         }
         return max;
     }
 }
+
 
 int min(nolista *l){
     int min;
